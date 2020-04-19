@@ -1,5 +1,6 @@
 import unittest
 import random
+import time
 
 class TestStringMethods(unittest.TestCase):
     def test_upper(self):
@@ -21,6 +22,11 @@ class TestStringMethods(unittest.TestCase):
             self.assertEqual(True, False)
         else:
             self.assertEqual(True, True)
+
+    def test_variable_time(self):
+        # Test that takes variable amount of time
+        time.sleep(random.randint(0,10))
+        self.assertEqual(True, True)
 
 if __name__ == "__main__":
     unittest.main()
